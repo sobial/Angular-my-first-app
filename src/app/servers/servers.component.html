@@ -12,7 +12,7 @@ class="form-control"
 <button class="btn btn-primary" [disabled]= '!allowNewServer' (click)= "onCreateServer()" >add new server</button> 
 
 <p>{{ serverName }}</p>
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server of servers; let i = index"></app-server>
 <p *ngIf="serverCreated ; else noServer">{{ serverCreationStatus }}</p>
 <ng-template #noServer>
     <p>no server created !</p>
